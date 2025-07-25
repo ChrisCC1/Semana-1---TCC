@@ -1,0 +1,582 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Variáveis de Cores */
+:root {
+    --primary-blue: #007bff; /* Um azul vibrante */
+    --secondary-red: #dc3545; /* Um vermelho para destaque */
+    --text-dark: #333;
+    --text-light: #f8f9fa;
+    --background-light: #f8f9fa;
+    --background-dark-card: #ffffff;
+    --border-color: #ced4da;
+    --box-shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos Globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, var(--primary-blue), #6a00a1); /* Gradiente de azul para roxo */
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--box-shadow-light);
+}
+
+.header .logo {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-card {
+    background-color: var(--background-dark-card);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px var(--box-shadow-light);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.form-card h2 {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Formulário */
+.registration-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    padding: 12px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+
+.registration-form input[type="text"]:focus,
+.registration-form input[type="email"]:focus,
+.registration-form input[type="password"]:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Sombra suave no foco */
+}
+
+.error-message {
+    color: var(--secondary-red);
+    font-size: 0.85em;
+    margin-top: 5px;
+    height: 18px; /* Para manter o layout estável mesmo sem erro */
+}
+
+.btn-submit {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3; /* Azul um pouco mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.login-link {
+    margin-top: 25px;
+    font-size: 0.95em;
+    color: var(--text-dark);
+}
+
+.login-link a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px var(--box-shadow-light);
+}
+
+/* Responsividade Básica */
+@media (max-width: 600px) {
+    .form-card {
+        padding: 30px 20px;
+    }
+
+    .form-card h2 {
+        font-size: 1.8em;
+    }
+
+    .header .logo {
+        font-size: 1.8em;
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="email"],
+    .registration-form input[type="password"] {
+        width: calc(100% - 16px); /* Ajusta para padding menor em telas pequenas */
+        padding: 10px 8px;
+    }
+}
+
+
+/* --- Novo CSS para a Página de Consultas --- */
+
+.header .nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espaço entre os links de navegação */
+    margin-top: 10px;
+}
+
+.header .nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo suave no hover */
+}
+
+.content-card {
+    background-color: var(--background-dark-card);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px var(--box-shadow-light);
+    width: 100%;
+    max-width: 800px; /* Maior para exibir mais conteúdo */
+    text-align: center;
+    margin-top: 30px; /* Espaçamento do cabeçalho */
+    margin-bottom: 30px; /* Espaçamento do rodapé */
+}
+
+.welcome-message {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.description-text {
+    font-size: 1.1em;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+.consultas-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+    display: inline-block; /* Para que a borda seja apenas no texto */
+}
+
+.no-consultas {
+    padding: 30px;
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.no-consultas p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.consultas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os itens de consulta */
+}
+
+.consulta-item {
+    background-color: var(--background-light); /* Fundo claro para o item */
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-blue); /* Borda azul de destaque */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px var(--box-shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.consulta-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--box-shadow-light);
+}
+
+.consulta-info {
+    flex: 2; /* Ocupa mais espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.consulta-date {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--primary-blue);
+}
+
+.consulta-time, .consulta-specialty {
+    font-size: 0.95em;
+    color: var(--text-dark);
+}
+
+.consulta-details {
+    flex: 3; /* Ocupa ainda mais espaço */
+    font-size: 1em;
+    color: var(--text-dark);
+    margin: 0 20px; /* Espaçamento lateral */
+}
+
+.btn-cancel {
+    background-color: var(--secondary-red);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Não permite que o botão diminua */
+    margin-left: auto; /* Empurra para a direita */
+}
+
+.btn-cancel:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.action-area {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.action-area p {
+    font-size: 1.05em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* Responsividade para itens de consulta */
+@media (max-width: 768px) {
+    .consulta-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .consulta-info, .consulta-details {
+        width: 100%;
+        margin: 0;
+    }
+
+    .btn-cancel {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .header .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+}
+
+
+/* --- Novo CSS para a Página de Histórico de Consultas --- */
+
+.historico-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.no-historico {
+    padding: 30px;
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.no-historico p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.historico-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Mais espaço entre os itens para detalhes */
+}
+
+.historico-item {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--secondary-red); /* Borda vermelha para diferenciar do futuro */
+    border-radius: 8px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 2px 4px var(--box-shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.historico-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--box-shadow-light);
+}
+
+.historico-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.historico-date {
+    font-weight: 700;
+    font-size: 1.3em;
+    color: var(--secondary-red); /* Data em vermelho para destaque do passado */
+}
+
+.historico-specialty {
+    font-size: 1.1em;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.historico-body {
+    margin-top: 15px;
+}
+
+.historico-doctor,
+.historico-diagnosis,
+.historico-notes {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.historico-doctor {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.historico-diagnosis strong,
+.historico-notes strong {
+    color: var(--primary-blue);
+}
+
+.historico-meds {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.historico-meds li {
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.btn-view-details {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.btn-view-details:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade para histórico */
+@media (max-width: 768px) {
+    .historico-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .historico-date {
+        font-size: 1.2em;
+    }
+    .historico-specialty {
+        font-size: 1em;
+    }
+    .historico-item {
+        padding: 20px;
+    }
+}
+
+/* --- Novo CSS para a Página de Agendamento --- */
+
+.agendamento-form select,
+.agendamento-form input[type="date"] {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    padding: 12px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    appearance: none; /* Remove estilo padrão de select/date em alguns browsers */
+    background-color: white; /* Garante fundo branco para select */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.5H18.6c-5.1%200-9.8%202.3-13.2%206.5-3.4%204.2-4.4%209.7-2.9%2014.9L132.8%20275c3.6%206.5%209.7%2010.4%2016.2%2010.4s12.6-3.9%2016.2-10.4l119.5-190.4c1.5-5.2.5-10.7-2.9-14.9z%22%2F%3E%3C%2Fsvg%3E'); /* Seta customizada para select */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.agendamento-form select:focus,
+.agendamento-form input[type="date"]:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.agendamento-form select:disabled,
+.agendamento-form input[type="date"]:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+    color: #6c757d;
+}
+
+/* Garante que o input date não tenha seta extra em alguns navegadores */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1; /* Garante que o ícone de calendário apareça */
+    cursor: pointer;
+}
+
+/* Ajusta o estilo do botão submit para agendamento, se precisar de alguma diferença */
+.agendamento-form .btn-submit {
+    margin-top: 30px; /* Mais espaçamento superior para o botão */
+}
+
+/* --- Novo CSS para a Página de Logout (opcional, pode ficar no próprio HTML) --- */
+.logout-message {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 1.2em;
+    color: var(--text-dark);
+}
+.logout-message h2 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+.logout-message p {
+    margin-bottom: 25px;
+}
+.logout-message a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+.logout-message a:hover {
+    text-decoration: underline;
+}

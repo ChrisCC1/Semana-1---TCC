@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Consultas - MedCare</title>
+    <link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Histórico de Consultas</h1>
+            <nav class="nav-menu">
+                <a href="consultas.html" class="nav-link">Minhas Consultas</a>
+                <a href="#" class="nav-link">Agendar Nova Consulta</a>
+                <a href="#" class="nav-link">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container content-card">
+            <h2 class="welcome-message">Histórico Completo de Consultas</h2>
+            <p class="description-text">Visualize todos os detalhes das suas consultas passadas.</p>
+
+            <div class="historico-section">
+                <h3>Suas Consultas Anteriores</h3>
+                <div class="no-historico" id="noHistoricoMessage" style="display: none;">
+                    <p>Você ainda não possui histórico de consultas registradas.</p>
+                    <button class="btn-primary">Agendar sua primeira consulta</button>
+                </div>
+                <div class="historico-list" id="historicoList">
+                    <div class="historico-item">
+                        <div class="historico-header">
+                            <span class="historico-date">10/06/2025</span>
+                            <span class="historico-specialty">Clínico Geral</span>
+                        </div>
+                        <div class="historico-body">
+                            <p class="historico-doctor">Dr. Pedro Alves</p>
+                            <p class="historico-diagnosis">Diagnóstico: Resfriado comum, recomendado repouso e hidratação.</p>
+                            <p class="historico-notes">Observações: Paciente apresentou sintomas leves, sem complicações. Prescrito analgésico e antitérmico.</p>
+                            <ul class="historico-meds">
+                                <li>Paracetamol 500mg - 1 comprimido a cada 6h</li>
+                                <li>Sorologia (Exame de Sangue)</li>
+                            </ul>
+                            <button class="btn-view-details">Ver Receitas/Documentos</button>
+                        </div>
+                    </div>
+
+                    <div class="historico-item">
+                        <div class="historico-header">
+                            <span class="historico-date">05/03/2025</span>
+                            <span class="historico-specialty">Dermatologia</span>
+                        </div>
+                        <div class="historico-body">
+                            <p class="historico-doctor">Dra. Fernanda Lima</p>
+                            <p class="historico-diagnosis">Diagnóstico: Dermatite de contato, devido a exposição a produto de limpeza.</p>
+                            <p class="historico-notes">Observações: Lesões leves na mão direita. Orientado a evitar contato com irritantes.</p>
+                            <ul class="historico-meds">
+                                <li>Creme de Hidrocortisona 1% - aplicar 2x ao dia</li>
+                            </ul>
+                            <button class="btn-view-details">Ver Receitas/Documentos</button>
+                        </div>
+                    </div>
+                    
+                    </div>
+            </div>
+
+            <div class="action-area">
+                <p>Precisa de um novo agendamento?</p>
+                <a href="agendamento.html">
+                <button class="btn-primary">Agendar Nova Consulta</button>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hospital. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="historico.js"></script> </body>
+</html>
